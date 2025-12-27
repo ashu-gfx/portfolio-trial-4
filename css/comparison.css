@@ -46,11 +46,74 @@ body {
   border-radius: 32px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #000;
+  max-width: 900px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 668px) {
+  .comparison-wrapper {
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .comparison-wrapper {
+    align-self: center;
+  }
+}
+
+@media (min-width: 668px) {
   .comparison-wrapper {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 300px) {
+  .comparison-wrapper {
+    margin-top: 1rem;
+    margin-left: 0.6rem;
+    margin-right: -0.5rem;
+  }
+}
+
+@media (min-width: 550px) {
+  .comparison-wrapper {
+    margin-top: 0rem;
+
+    margin-left: 0.85rem;
+    margin-right: 0.85rem;
+  }
+}
+
+@media (min-width: 740px) {
+  .comparison-wrapper {
+    margin-top: 0rem;
+
+    margin-left: 0.85rem;
+    margin-right: 0.85rem;
+  }
+}
+
+@media (min-width: 765px) {
+  .comparison-wrapper {
+    margin-top: 0rem;
+
+    margin-left: 1.45rem;
+    margin-right: 1.45rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .comparison-wrapper {
+    margin-left: 1.35rem;
+    margin-right: 1.35rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .comparison-wrapper {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

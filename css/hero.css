@@ -125,6 +125,30 @@ section.hero {
   font-size: 0.75rem;
 }
 
+.hero-sec {
+  box-shadow: none;
+}
+
+.img-main {
+  box-shadow: none;
+}
+
+.hero-sec img {
+  height: 100%;
+}
+
+.img-main img {
+  height: 100%;
+}
+
+.img-orange {
+  display: none;
+}
+
+.img-main {
+  display: none;
+}
+
 .img-orange {
   box-shadow: none;
 }
@@ -140,7 +164,6 @@ section.hero {
 .img-main img {
   height: 100%;
 }
-
 /* =========================
    Desktop ≥ 768px
 ========================= */
@@ -218,6 +241,26 @@ section.hero {
     z-index: -1;
   }
 
+  .hero-sec {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+  }
+
+  .hero-img {
+    position: absolute;
+    left: 21%;
+    width: 50%;
+    height: 100%;
+    /* transform: rotate(9.54deg); */
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+    /* overflow: hidden; */
+  }
+
   .img-orange {
     position: absolute;
     width: 50%;
@@ -238,6 +281,21 @@ section.hero {
   }
 }
 
+@media (max-width: 600px) {
+  .hero-sec {
+    display: none;
+  }
+
+  .hero-img {
+    display: none;
+  }
+  .img-orange {
+    display: block;
+  }
+  .img-main {
+    display: block;
+  }
+}
 @media (min-width: 600px) {
   section.hero {
     padding-top: 4.5rem;
@@ -288,7 +346,7 @@ section.hero {
   .hero-images {
     display: block;
     position: absolute;
-    top: -3.2rem;
+    top: -2.4rem;
     right: -4.5rem;
     width: 18rem;
     height: 13rem;
@@ -302,6 +360,23 @@ section.hero {
     height: 205px;
     transform: rotate(-4deg);
     z-index: -1;
+  }
+
+  .hero-sec {
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    position: absolute;
+    left: 21%;
+    width: 50%;
+    height: 100%;
+    /* transform: rotate(9.54deg); */
+
+    /* overflow: hidden; */
   }
 
   .img-orange {
@@ -387,6 +462,24 @@ section.hero {
     height: 205px;
     transform: rotate(-4deg);
     z-index: -1;
+  }
+
+  .hero-sec {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+  }
+
+  .hero-img {
+    position: absolute;
+    left: 21%;
+    width: 50%;
+    height: 100%;
+    /* transform: rotate(9.54deg); */
+
+    /* overflow: hidden; */
   }
 
   .img-orange {
@@ -475,23 +568,21 @@ section.hero {
     z-index: -1;
   }
 
-  .img-orange {
+  .hero-sec {
     position: absolute;
     width: 50%;
-    height: 100%;
-    transform: rotate(-14.86deg);
-
+    height: 95%;
     overflow: hidden;
   }
 
-  .img-main {
+  .hero-img {
     position: absolute;
     left: 21%;
     width: 50%;
     height: 100%;
-    transform: rotate(9.54deg);
+    /* transform: rotate(9.54deg); */
 
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 }
 

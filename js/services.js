@@ -1,37 +1,90 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navItems = document.querySelectorAll('.nav-item')
-  const container = document.getElementById('scrollContainer')
-  const sections = document.querySelectorAll('.service-card')
+function wrapWordsPreserveHTML (element) {
+  const walker = document.createTreeWalker(
+    element,
+    NodeFilter.SHOW_TEXT,
+    null,
+    false
+  )
 
-  // Scroll to section when clicking sidebar item
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const targetId = item.dataset.target
-      const targetEl = document.getElementById(targetId)
+  const textNodes = []
 
-      container.scrollTo({
-        top: targetEl.offsetTop,
-        behavior: 'smooth'
-      })
+  while (walker.nextNode()) {
+    if (walker.currentNode.textContent.trim()) {
+      textNodes.push(walker.currentNode)
+    }
+  }
 
-      setActive(item.dataset.target)
-    })
-  })
+  textNodes.forEach(node => {
+    const words = node.textContent.split(/\s+/)
+    const fragment = document.createDocumentFragment()
 
-  // Auto-highlight active section while scrolling
-  container.addEventListener('scroll', () => {
-    sections.forEach(sec => {
-      const rect = sec.getBoundingClientRect()
-      const containerTop = container.getBoundingClientRect().top + 50
+    words.forEach((word, index) => {
+      const span = document.createElement('span')
+      span.classList.add('word')
+      span.textContent = word
 
-      if (rect.top < containerTop + 200 && rect.bottom > containerTop) {
-        setActive(sec.id)
+      fragment.appendChild(span)
+
+      // Preserve spaces between words
+      if (index < words.length - 1) {
+        fragment.appendChild(document.createTextNode(' '))
       }
     })
-  })
 
-  function setActive (id) {
-    navItems.forEach(btn => btn.classList.remove('active'))
-    document.querySelector(`[data-target="${id}"]`)?.classList.add('active')
+    node.parentNode.replaceChild(fragment, node)
+  })
+}
+
+// Apply to headline
+document.querySelectorAll('.section-header1 .title').forEach(el => {
+  if (el.dataset.wordsWrapped) return
+  wrapWordsPreserveHTML(el)
+  el.dataset.wordsWrapped = 'true'
+})
+
+gsap.from('.section-header1 .title .word', {
+  y: 100,
+  opacity: 0,
+  stagger: 0.05,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.services-section',
+    start: 'top 75%'
+  }
+})
+
+gsap.from('.number', {
+  scrollTrigger: {
+    trigger: '.services-section',
+    start: 'top 75%',
+    once: true
+  },
+  duration: 1.4,
+  ease: 'power2.out',
+  stagger: 0.2,
+
+  onStart () {
+    this.targets().forEach(el => {
+      const raw = el.textContent.trim()
+      const endValue = parseInt(raw.replace(/\D/g, ''), 10)
+
+      if (isNaN(endValue)) {
+        console.warn('Invalid number:', el)
+        return
+      }
+
+      el._endValue = endValue
+      el.textContent = '0'
+    })
+  },
+
+  onUpdate () {
+    this.targets().forEach(el => {
+      if (!el._endValue) return
+
+      const progress = this.progress()
+      const current = Math.round(el._endValue * progress)
+      el.textContent = current
+    })
   }
 })
