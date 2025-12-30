@@ -184,7 +184,7 @@
   }
 }
 
-@media (min-width: 550px) {
+@media (min-width: 549px) {
   .stats-section {
     padding: 2rem 1rem;
     /* border-top: 1px solid #eee; */
@@ -192,7 +192,7 @@
 
   .stats-container {
     grid-template-columns: 1fr 3fr;
-    padding: 0 1rem;
+    padding: 0rem;
   }
 
   .stats-description {
@@ -202,7 +202,7 @@
     font-size: 0.5rem;
   }
   .stats-grid {
-    /* padding-left: 0rem; */
+    padding-left: 0rem;
     /* padding: 0; */
     align-self: center;
     justify-self: center;
@@ -219,17 +219,51 @@
   }
 }
 
+@media (min-width: 551px) {
+  .stats-container {
+    grid-template-columns: 1fr 3fr;
+    padding: 0 1rem;
+  }
+
+  .stats-grid {
+    padding-left: 0.5rem;
+    gap: 2.3rem;
+    /* padding: 0; */
+  }
+}
+
+@media (min-width: 571px) {
+  .stats-container {
+    grid-template-columns: 1fr 3fr;
+    padding: 0 1rem;
+  }
+
+  .stats-grid {
+    padding-left: 0.5rem;
+    gap: 2.7rem;
+    /* padding: 0; */
+  }
+}
 @media (min-width: 600px) {
   .stats-container {
     grid-template-columns: 1fr 3fr;
     padding: 0 1.7rem;
+  }
+
+  .stats-grid {
+    gap: 3rem;
+    /* padding: 0; */
   }
 }
 
 @media (min-width: 650px) {
   .stats-container {
     grid-template-columns: 1fr 3fr;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
+  }
+  .stats-grid {
+    gap: 5rem;
+    /* padding: 0; */
   }
 }
 
@@ -241,9 +275,12 @@
 
   .stats-description {
     display: block;
+    align-content: flex-start;
+    align-self: self-start;
   }
   .stats-description p {
     font-size: 0.44rem;
+    margin-top: 0;
   }
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -351,7 +388,7 @@
 }
 
 @media (min-width: 1078px) {
-    .stats-container {
+  .stats-container {
     padding: 0 0.9rem;
   }
   .stats-section {
@@ -388,7 +425,7 @@
 }
 
 @media (min-width: 1181px) {
-   .stats-container {
+  .stats-container {
     padding: 0 1rem;
   }
   .stats-section {
@@ -408,7 +445,7 @@
 }
 
 @media (min-width: 1200px) {
-   .stats-container {
+  .stats-container {
     padding: 0 1.4rem;
   }
   .stats-section {

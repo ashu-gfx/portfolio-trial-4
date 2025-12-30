@@ -1,23 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-  gsap.registerPlugin(ScrollTrigger)
+  // Register GSAP plugin once
+  gsap.registerPlugin(ScrollTrigger);
 
-  function wrapWordsForReveal (selector) {
-    document.querySelectorAll(selector).forEach(word => {
-      if (word.querySelector('.text-inner3')) return
+  /**
+   * Wraps text content into animatable spans.
+   * Handles multiple spaces by collapsing them into single delimiters.
+   */
+  function wrapWordsForReveal(selector) {
+    document.querySelectorAll(selector).forEach(el => {
+      // Prevent double-wrapping if the function is called twice
+      if (el.querySelector('.text-inner3')) return;
 
-      const text = word.innerHTML.trim()
-      word.innerHTML = `
-        <span class="text-mask3">
-          <span class="text-inner3">${text}</span>
-        </span>
-      `
-    })
+      // Use regex /\s+/ to split by one OR MORE spaces
+      // .filter(Boolean) removes any empty strings from the array
+      const words = el.textContent.trim().split(/\s+/).filter(Boolean);
+
+      el.innerHTML = words
+        .map(
+          word => `
+          <span class="text-mask3" style="display: inline-block; overflow: hidden; vertical-align: bottom;">
+            <span class="text-inner3" style="display: inline-block;">${word}</span>
+          </span>
+        `
+        )
+        .join(' '); // Re-inserts a single space between words
+    });
   }
 
-  // Wrap the words
-  wrapWordsForReveal('.heading .word3')
+  // 1. Prepare the elements
+  wrapWordsForReveal('.heading .word3');
+  wrapWordsForReveal('.description');
+  wrapWordsForReveal('.role');
+  wrapWordsForReveal('.company');
+  wrapWordsForReveal('.period');
 
-  // Animate
+  // 2. Animate Headings
   gsap.fromTo(
     '.heading .text-inner3',
     { y: '100%', autoAlpha: 0 },
@@ -30,67 +47,41 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: '.heading',
         start: 'top 75%',
-        once: true,
-        markers: false // for debugging
+        once: true
       }
     }
-  )
-})
+  );
 
-// discription animation
-
-document.addEventListener('DOMContentLoaded', () => {
-  gsap.registerPlugin(ScrollTrigger)
-
-  // Wrap each word in a selector
-  function wrapWordsForReveal (selector) {
-    document.querySelectorAll(selector).forEach(el => {
-      if (el.querySelector('.text-inner3')) return
-
-      const words = el.textContent.trim().split(' ') // split text into words
-      el.innerHTML = words
-        .map(
-          word => `
-          <span class="text-mask3">
-            <span class="text-inner3">${word}</span>
-          </span>
-        `
-        )
-        .join(' ') // preserve spaces
-    })
-  }
-
-  // Apply to description and role
-  wrapWordsForReveal('.description')
-  wrapWordsForReveal('.role')
-  wrapWordsForReveal('.company')
-  wrapWordsForReveal('.period')
-
-  // Animate all .text-inner3
+  // 3. Animate Descriptions & Roles (triggered by .layout)
   gsap.fromTo(
-    '.text-inner3',
+    '.description .text-inner3, .role .text-inner3, .company .text-inner3, .period .text-inner3',
     { y: '100%', autoAlpha: 0 },
     {
       y: '0%',
       autoAlpha: 1,
       duration: 0.9,
       ease: 'power3.out',
-      stagger: 0.05,
+      stagger: 0.02, // Faster stagger for longer body text
       scrollTrigger: {
-        trigger: '.layout', // trigger once when layout scrolls into view
+        trigger: '.layout',
         start: 'top 80%',
-        once: true,
-        markers: false // set to true to debug
+        once: true
       }
     }
-  )
+  );
 
+  // 4. Animate Experience Item borders
   gsap.from('.exp-item', {
     borderBottomWidth: 0,
     borderBottomColor: '#ddd',
     autoAlpha: 0,
     duration: 1.6,
     ease: 'power2.out',
-    stagger: 0.1
-  })
-})
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: '.layout',
+      start: 'top 80%',
+      once: true
+    }
+  });
+});

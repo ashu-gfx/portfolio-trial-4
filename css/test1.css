@@ -1,0 +1,116 @@
+@media (min-width: 768px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .center-info {
+    /* display: none; */
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    color: #414141;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 549px) {
+  .logo {
+    font-size: 1.4rem;
+    justify-self: flex-start;
+    padding-left: 1.3rem;
+  }
+
+ 
+
+  .container {
+    width: 100vw;
+    margin-right: 0vw;
+    padding-right: 0vw;
+  }
+
+  header {
+    width: 100vw;
+    margin-right: 0vw;
+    padding-right: 0vw;
+  }
+
+  .center-info {
+    /* display: none; */
+    /* gap: 0.5rem; */
+    font-size: 0.7rem;
+    color: #414141;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 300px) {
+  .logo {
+    font-size: 1.4rem;
+    justify-self: flex-start;
+    padding-left: 1.3rem;
+  }
+
+  .container {
+    width: 100vw;
+    margin-right: 0vw;
+    padding-right: 0vw;
+  }
+
+  header {
+    width: 100vw;
+    margin-right: 0vw;
+    padding-right: 0vw;
+  }
+
+  .center-info {
+    /* display: none; */
+    /* gap: 0.5rem; */
+    font-size: 0.7rem;
+    color: #414141;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 1080px) {
+  .container {
+    /* max-width: 1440px; */
+    /* margin: 0 auto; */
+
+    /* padding: 0 1rem; */
+
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo */
+  .logo {
+    /* font-family: 'Space Grotesk', system-ui, sans-serif; */
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding-left: 3.2rem;
+    text-transform: uppercase;
+    color: #151515;
+  }
+
+  /* Center info */
+  .center-info {
+    display: none;
+    gap: 4rem;
+    font-size: 1rem;
+    color: #414141;
+    font-weight: 500;
+  }
+
+  .center-info {
+    display: flex;
+  }
+
+  /* Buttons */
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}

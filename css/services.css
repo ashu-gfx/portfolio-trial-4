@@ -13,6 +13,7 @@
   color: #0f0f0f;
   font-size: 14px;
   border-radius: 20px;
+  font-weight: 400;
 }
 
 .section-header1 .title-service {
@@ -73,6 +74,7 @@
 
 @media (min-width: 300px) {
   .section-header1 {
+    justify-items: center;
     /* margin: 0 auto 40px; */
     margin-bottom: 20px;
   }
@@ -113,7 +115,7 @@
   .section-header1 .title-service {
     font-size: 1.55rem;
     text-align: left;
-     max-width: 350px;
+    max-width: 350px;
   }
 }
 
@@ -137,7 +139,7 @@
   .section-header1 .title-service {
     font-size: 1.95rem;
     text-align: left;
-     max-width: 450px;
+    max-width: 450px;
   }
 }
 
@@ -145,7 +147,6 @@
   .section-header1 .title-service {
     font-size: 1.5rem;
     text-align: center;
-   
   }
 }
 

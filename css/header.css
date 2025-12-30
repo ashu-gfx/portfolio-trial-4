@@ -96,6 +96,18 @@ body.dark .center-info {
   /* transform: none; */
 }
 
+@media (min-width: 750px) {
+  .talk-btn {
+    margin-right: 1.3rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .talk-btn {
+    margin-right: 3.2rem;
+  }
+}
+
 .talk-btn i {
   margin-right: 8px;
 }
@@ -128,6 +140,28 @@ body.dark .talk-btn {
   cursor: pointer;
   display: block;
   color: #000;
+}
+
+@media (min-width: 300px) {
+  .menu-btn {
+    font-size: 1.4rem;
+    justify-self: flex-start;
+    padding-right: 0.7rem;
+  }
+}
+
+@media (min-width: 549px) {
+  .menu-btn {
+    font-size: 1.4rem;
+    justify-self: flex-end;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-btn {
+    font-size: 1rem;
+  }
 }
 
 body.dark .menu-btn {

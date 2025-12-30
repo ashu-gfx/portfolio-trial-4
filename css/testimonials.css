@@ -49,8 +49,8 @@
 }
 
 .testimonial-avatar {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 25%;
   object-fit: cover;
   /* border: 2px solid #fff; */
@@ -58,7 +58,7 @@
 }
 
 .testimonial-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: #334155;
   letter-spacing: -0.5px;

@@ -11,13 +11,108 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #0f172a;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 500;
+  /* font-size: 2.5rem; */
+  text-transform: uppercase;
+  color: #000;
+  margin: 1rem;
+  letter-spacing: -1px;
+}
+
+@media (min-width: 550px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .section-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .section-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 970px) {
+  .section-title {
+    font-size: 2.9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 3.4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: 4.2rem;
+  }
+}
+
+@media (min-width: 1260px) {
+  .section-title {
+    font-size: 4.8rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .section-title {
+    font-size: 4.6rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .section-title {
+    font-size: 5.2rem;
+  }
+}
+
+@media (min-width: 1550px) {
+  .section-title {
+    font-size: 5.6rem;
+  }
+}
+
+@media (min-width: 1648px) {
+  .section-title {
+    font-size: 5.8rem;
+  }
+}
+
+@media (min-width: 1700px) {
+  .section-title {
+    font-size: 5.8rem;
+  }
 }
 
 /* Portfolio Layout */
 .portfolio-section {
+  padding-bottom: 6rem;
   padding-left: 3.4rem;
   padding-right: 3.2rem;
   margin: auto;
@@ -31,7 +126,7 @@
     margin-top: 0rem;
     padding-top: 1rem;
     padding-left: 1.4rem;
-    padding-right: 0.8rem;
+    padding-right: 1.4rem;
   }
 }
 
@@ -69,6 +164,29 @@
   }
 }
 
+@media (min-width: 965px) {
+  .portfolio-section {
+    padding-left: 2.9rem;
+    padding-right: 2.9rem;
+  }
+}
+
+
+@media (min-width: 1100px) {
+   .portfolio-section {
+    padding-left: 3.1rem;
+    padding-right: 3.1rem;
+  }
+}
+
+@media (min-width: 1190px) {
+   .portfolio-section {
+    padding-left: 3.35rem;
+    padding-right: 3.35rem;
+  }
+}
+
+
 /* @media (max-width: 800px) {
   .portfolio-section {
     padding-left: 2.2rem;
@@ -96,32 +214,82 @@
 
 .portfolio-image-box {
   position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: 1.5rem;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
   overflow: hidden;
-  background: #f1f5f9;
+  background: #000; /* Keeps the "letterbox" bars black */
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-video {
+  position: absolute;
+  /* Centering Logic */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Size Logic */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+
+  object-fit: contain; /* Shows full video without cropping */
+  opacity: 0;
+  z-index: 1;
+  transition: none !important;
+}
+
+/* Image sits on top */
+.portfolio-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition: none !important;
+  display: block;
+}
+.portfolio-item:hover .portfolio-video {
+  opacity: 1; /* Shows video instantly */
+}
+
+/* Hover Effect: Image disappears, Video is revealed */
+.portfolio-item:hover .portfolio-img {
+  opacity: 0;
+  visibility: hidden;
+  display: none !important; /* Immediate removal */
 }
 
 .portfolio-image-box img {
   width: 100%;
-  height: 100%;
+  background-color: #fff;
+  align-self: center;
+  justify-self: center;
+  /* height: 100%; */
   object-fit: cover;
-  transition: transform 0.7s ease;
+  /* transition: transform 0.7s ease; */
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 /* Tags */
 .badge2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
   background: #ffffff;
   padding: 0.35rem 0.75rem;
   border-radius: 1rem;
   border: 1px solid #e2e8f0;
   font-size: 0.8rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #0f172a;
 }
 
@@ -131,6 +299,7 @@
   left: 1rem;
   display: flex;
   gap: 0.5rem;
+  z-index: 3;
 }
 
 /* Content */
@@ -142,22 +311,28 @@
 }
 
 .item-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin: 0;
   font-size: 1.25rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   color: #0f172a;
 }
 
 .item-category {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  margin-top: 0.2rem;
   color: #64748b;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
 /* Arrow Button */
 .arrow-btn {
-  width: 3rem;
+  width: 5rem;
   height: 3rem;
   border-radius: 999px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #aaaaaa;
   display: flex;
   align-items: center;
   justify-content: center;

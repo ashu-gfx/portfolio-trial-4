@@ -38,7 +38,7 @@ body {
   .experience-section {
     margin-top: 3rem;
     padding-left: 1.5rem;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
   }
 }
 
@@ -95,7 +95,7 @@ body {
 
 @media (min-width: 800px) {
   .left {
-    width: 33%;
+    width: 50%;
     position: sticky;
     top: 100px;
     height: fit-content;
@@ -104,7 +104,7 @@ body {
 
 @media (min-width: 1024px) {
   .left {
-    width: 33%;
+    width: 50%;
     position: sticky;
     top: 100px;
     height: fit-content;
@@ -124,10 +124,11 @@ body {
 
 /* Heading */
 .heading {
+  margin-top: 0px;
   font-size: 2.5rem;
   font-weight: 500;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 1.7rem;
 }
 
 /* @media (min-width: 768px) {
@@ -323,7 +324,6 @@ body {
   }
 }
 
-
 @media (min-width: 800px) {
   .heading {
     font-size: 1.5rem;
@@ -339,39 +339,8 @@ body {
   }
 }
 
-
 @media (min-width: 834px) {
   .heading {
-    font-size: 1.5rem;
-    max-width: 100%;
-    /* text-align: center; */
-  }
-
-  .description {
-    max-width: 90%;
-    font-size: 0.7rem;
-    font-weight: 500;
-    margin-bottom: 12px;
-  }
-}
-
-@media (min-width: 906px) {
-   .heading {
-    font-size: 1.5rem;
-    max-width: 100%;
-    /* text-align: center; */
-  }
-
-  .description {
-    max-width: 90%;
-    font-size: 0.7rem;
-    font-weight: 500;
-    margin-bottom: 12px;
-  }
-}
-
-@media (min-width: 950px) {
-   .heading {
     font-size: 1.6rem;
     max-width: 100%;
     /* text-align: center; */
@@ -385,8 +354,38 @@ body {
   }
 }
 
+@media (min-width: 906px) {
+  .heading {
+    font-size: 1.6rem;
+    max-width: 100%;
+    /* text-align: center; */
+  }
+
+  .description {
+    max-width: 90%;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 950px) {
+  .heading {
+    font-size: 1.7rem;
+    max-width: 100%;
+    /* text-align: center; */
+  }
+
+  .description {
+    max-width: 90%;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+}
+
 @media (min-width: 1000px) {
-   .heading {
+  .heading {
     font-size: 1.8rem;
     /* font-size: 1.9rem; */
     max-width: 100%;
@@ -548,10 +547,39 @@ body {
 
 /* Role */
 .role {
-  font-size: 24px;
-  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #0f172a;
   transition: transform 0.3s;
+}
+
+@media (min-width: 800px) {
+  .role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .role {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+  }
 }
 
 .exp-item:hover .role {
@@ -560,8 +588,40 @@ body {
 
 /* Period */
 .period {
-  font-size: 14px;
+  font-size: 0.5rem;
   color: #999;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+@media (min-width: 800px) {
+  .period {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.5rem;
+    padding-top: 7%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .period {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .period {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .period {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    padding-top: 5%;
+  }
 }

@@ -23,26 +23,10 @@
   background-size: 5.5rem 5.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 550px) {
   .grid {
-    /* left: 0%; */
-    height: 130vh;
-  }
-
-  .grid-container {
-    /* height: 130vh; */
-  }
-}
-
-@media (min-width: 1200px) {
-  .grid {
-    left: 10%;
-  }
-}
-
-@media (min-width: 900px) {
-  .grid {
-    height: 130vh;
+    left: 0;
+    height: 100vh;
   }
 }
 
@@ -52,9 +36,20 @@
   }
 }
 
-@media (min-width: 550px) {
+@media (min-width: 900px) {
   .grid {
-        left: 0;
-    height: 100vh;
+    height: 110vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    height: 120vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    /* left: 10%; */
   }
 }

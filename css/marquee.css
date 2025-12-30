@@ -6,6 +6,8 @@
   position: relative;
   white-space: nowrap;
   z-index: 20;
+  rotate: -1.52deg;
+  /* margin-top: 5rem; */
 }
 
 .marquee-track1 {
