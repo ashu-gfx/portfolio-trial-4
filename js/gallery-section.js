@@ -1,8 +1,8 @@
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const mm = gsap.matchMedia()
+const mm = gsap.matchMedia();
 
-mm.add('(min-width: 769px)', () => {
+mm.add("(min-width: 769px)", () => {
   const galleryTL = gsap.timeline({
     scrollTrigger: {
       trigger: '.gallery-section',
@@ -11,33 +11,23 @@ mm.add('(min-width: 769px)', () => {
       scrub: 1,
       pin: true,
       anticipatePin: 1,
-      invalidateOnRefresh: true
+      invalidateOnRefresh: true,
       // markers: true
     }
-  })
+  });
 
   // 1️⃣ Animate expansion
-  galleryTL.to(
-    '.img-center',
-    {
-      width: '90vw',
-      ease: 'none',
-      delay: 1,
-      duration: 1
-    },
-    0
-  )
+  galleryTL.to('.img-center', {
+    width: '90vw',
+    ease: 'none'
+  }, 0);
 
   // 2️⃣ HOLD STATE
-  galleryTL.to(
-    {},
-    {
-      duration: 0.8,
-      delay: 2
-    }
-  )
-})
+  galleryTL.to({}, {
+    duration: 0.4
+  });
+});
 
-mm.add('(max-width: 768px)', () => {
-  gsap.set('.img-center', { width: '100%' })
-})
+mm.add("(max-width: 768px)", () => {
+  gsap.set('.img-center', { width: '100%' });
+});
